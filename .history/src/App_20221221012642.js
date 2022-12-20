@@ -4,11 +4,11 @@ function App() {
   return (
     <Switch>
       
-      <Route exact path={"/"}>
+      <Route path={"/"}>
       <h1>This is a home page</h1>
       </Route>
     
-      <Route exact path={"/starred"}>
+      <Route path={"/starred"}>
         <h1>this is starred</h1>
       </Route>
 
