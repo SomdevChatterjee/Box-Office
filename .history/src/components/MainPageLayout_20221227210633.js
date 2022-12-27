@@ -1,12 +1,10 @@
-import React from 'react';
-import {Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Starred from './pages/Starred';
+import React from 'react'
 
-function App() {
+const MainPageLayout = () => {
   return (
-
-  <Switch>
+    <div>
+      <Navs/>
+  <>
       
       <Route exact path="/">
         <Home/>
@@ -22,8 +20,10 @@ function App() {
         </div>
       </Route>
       
-    </Switch>
-  );
+    </>
+  
+    </div>
+  )
 }
 
-export default App;
+export default MainPageLayout

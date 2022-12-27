@@ -1,11 +1,11 @@
-import React from 'react';
-import {Switch, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Starred from './pages/Starred';
+import React from 'react'
+import { Switch } from 'react-router'
+import { Route } from 'workbox-routing'
 
-function App() {
+const MainPageLayout = () => {
   return (
-
+    <div>
+      <Navs/>
   <Switch>
       
       <Route exact path="/">
@@ -23,7 +23,9 @@ function App() {
       </Route>
       
     </Switch>
-  );
+  
+    </div>
+  )
 }
 
-export default App;
+export default MainPageLayout
