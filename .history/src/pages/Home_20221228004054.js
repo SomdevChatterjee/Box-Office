@@ -22,7 +22,8 @@ const Home = () => {
   const onKeyDown = (ev) =>{
  
     if(ev.keyCode === 13){
-      onSearch();
+       // eslint-disable-next-line no-console
+      o
    }
   
   };

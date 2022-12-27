@@ -17,15 +17,16 @@ const Home = () => {
   const onInputChange = (ev)=>{
       // eslint-disable-next-line no-console
       setInput(ev.target.value);
-  }
+}
 
-  const onKeyDown = (ev) =>{
+const onKeyDown = (ev) =>{
  
-    if(ev.keyCode === 13){
-      onSearch();
-   }
+  if(ev.keyCode === 13){
+     // eslint-disable-next-line no-console
+    console.log(ev.keyCode);
+  }
   
-  };
+};
   return (
     <div>
       <MainPageLayout>

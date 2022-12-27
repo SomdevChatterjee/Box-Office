@@ -5,27 +5,25 @@ const Home = () => {
 
   const [ input , setInput]  = useState('');
 
-  const onSearch = ()=>{
-    // https://api.tvmaze.com/search/shows?q=man
+const onInputChange = (ev)=>{
     // eslint-disable-next-line no-console
-    fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
-    .then(r=>r.json())
-    // eslint-disable-next-line no-console
-    .then(result=>console.log(result));
-  };
-
-  const onInputChange = (ev)=>{
-      // eslint-disable-next-line no-console
-      setInput(ev.target.value);
+    setInput(ev.target.value);
+}
+const onSearch = ()=>{
+  // https://api.tvmaze.com/search/shows?q=man
+  // eslint-disable-next-line no-console
+  fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
+  .then(r=>r.json())
+  // eslint-disable-next-line no-console
+  .then(result=>console.log(result));
+};
+const onKeyDown = (ev) =>{
+  // eslint-disable-next-line no-console
+  if(ev.keyCode === 13){
+    console.log(ev.keyCode);
   }
-
-  const onKeyDown = (ev) =>{
- 
-    if(ev.keyCode === 13){
-      onSearch();
-   }
   
-  };
+};
   return (
     <div>
       <MainPageLayout>

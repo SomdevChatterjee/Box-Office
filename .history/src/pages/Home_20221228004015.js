@@ -13,19 +13,20 @@ const Home = () => {
     // eslint-disable-next-line no-console
     .then(result=>console.log(result));
   };
-
-  const onInputChange = (ev)=>{
-      // eslint-disable-next-line no-console
-      setInput(ev.target.value);
-  }
-
-  const onKeyDown = (ev) =>{
- 
-    if(ev.keyCode === 13){
-      onSearch();
-   }
   
-  };
+const onInputChange = (ev)=>{
+    // eslint-disable-next-line no-console
+    setInput(ev.target.value);
+}
+
+const onKeyDown = (ev) =>{
+ 
+  if(ev.keyCode === 13){
+     // eslint-disable-next-line no-console
+    console.log(ev.keyCode);
+  }
+  
+};
   return (
     <div>
       <MainPageLayout>
