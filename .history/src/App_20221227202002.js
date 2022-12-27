@@ -5,7 +5,7 @@ function App() {
   return (
     <Switch>
       
-      <Route exact path="/">
+      <Route exact =  path="/">
       <h1>This is a home page</h1>
       </Route>
     
