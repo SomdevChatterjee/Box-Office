@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import MainPageLayout from '../components/MainPageLayout'
-import { apiGet } from '../misc/config';
 
 const Home = () => {
 
@@ -11,12 +10,13 @@ const Home = () => {
   const onSearch = ()=>{
     // https://api.tvmaze.com/search/shows?q=man
     
-    apiGet(`search/shows?q=${input}`)
-      .then(result => {
-        setResults(result);
-        // eslint-disable-next-line no-console
-        console.log(result);
-      });
+    fetch(`https://api.tvmaze.com/search/shows?q=${input}`)
+    .then(r=>r.json())
+    .then(result=>{
+      setResults(result);
+      // eslint-disable-next-line no-console
+      console.log(result);
+    })
   };
 
   const onInputChange = (ev)=>{
@@ -44,7 +44,7 @@ const Home = () => {
           <h4>
             {items.show.name}
           </h4>
-          <h5>status: <i>{items.show.status}</i></h5>
+          <h3>status: <></>{items.show.status}</h3>
           </div> )}
       </div>
     }

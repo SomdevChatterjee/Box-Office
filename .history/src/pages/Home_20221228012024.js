@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import MainPageLayout from '../components/MainPageLayout'
 import { apiGet } from '../misc/config';
-
 const Home = () => {
 
   const [ input , setInput]  = useState('');
