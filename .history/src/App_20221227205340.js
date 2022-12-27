@@ -15,13 +15,11 @@ function App() {
       </Route>
     
       <Route exact path='/starred'>
-        <Starred/>
+        <Starred
       </Route>
 
       <Route>
-        <div>
-          <h1>Not Found</h1>
-        </div>
+        <h1>this is 404 page</h1>
       </Route>
       
     </Switch>

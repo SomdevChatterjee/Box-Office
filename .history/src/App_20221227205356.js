@@ -19,9 +19,7 @@ function App() {
       </Route>
 
       <Route>
-        <div>
-          <h1>Not Found</h1>
-        </div>
+        <></>
       </Route>
       
     </Switch>
