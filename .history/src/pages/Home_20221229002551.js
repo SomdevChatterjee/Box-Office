@@ -9,12 +9,12 @@ const Home = () => {
  /* state used to show results */
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState('shows');
-  const isShowsSearch = searchOption === 'shows';
+  const isShowsSearch = searchOption ==;
 
   const onSearch = ()=>{
     // the api =  https://api.tvmaze.com/search/shows?q=man
     
-    apiGet(`search/${searchOption}?q=${input}`)
+    apiGet(`search/shows?q=${input}`)
       .then(result => {
         setResults(result);
         console.log(result);
@@ -41,18 +41,14 @@ const Home = () => {
     }
 
     if(results && results.length > 0){
-      return results[0].shows ?results.map( items=><div>
-        <h4>
-          {items.show.name}
-        </h4>
-        <h5>status: <i>{items.show.status}</i></h5>
-        </div> ):results.map(()=>(
-          results.map( items=><div key={items.person.id}>
-            <h4>
-              {items.person.name}
-            </h4>
-            </div> )
-        ))
+      return <div>
+        {results.map( items=><div>
+          <h4>
+            {items.show.name}
+          </h4>
+          <h5>status: <i>{items.show.status}</i></h5>
+          </div> )}
+      </div>
     }
 
       return null;
@@ -69,10 +65,10 @@ const Home = () => {
         <input type ="text" placeholder= "search for a movie or actor" onChange={onInputChange} onKeyDown={onKeyDown}/>
         <div>
           <label htmlFor='showsSearch'>
-            Shows<input id='showsSearch' type="radio" value='shows' onChange={onRadioChange} checked={isShowsSearch}/>
+            Shows<input id='showsSearch' type="radio" value='shows' onChange={onRadioChange}/>
           </label>
           <label htmlFor='actorsSearch'>
-            Actors<input id='actorsSearch' type="radio" value='people' onChange={onRadioChange} checked={!isShowsSearch}/>
+            Actors<input id='actorsSearch' type="radio" value='people' onChange={onRadioChange}/>
           </label>
         </div>
         <button type="button" onClick={onSearch}>Search</button>

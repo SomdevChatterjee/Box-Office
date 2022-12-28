@@ -41,18 +41,14 @@ const Home = () => {
     }
 
     if(results && results.length > 0){
-      return results[0].shows ?results.map( items=><div>
-        <h4>
-          {items.show.name}
-        </h4>
-        <h5>status: <i>{items.show.status}</i></h5>
-        </div> ):results.map(()=>(
-          results.map( items=><div key={items.person.id}>
-            <h4>
-              {items.person.name}
-            </h4>
-            </div> )
-        ))
+      return <div>
+        {results.map( items=><div>
+          <h4>
+            {items.show.name}
+          </h4>
+          <h5>status: <i>{items.show.status}</i></h5>
+          </div> )}
+      </div>
     }
 
       return null;

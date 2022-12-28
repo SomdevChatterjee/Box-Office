@@ -47,12 +47,13 @@ const Home = () => {
         </h4>
         <h5>status: <i>{items.show.status}</i></h5>
         </div> ):results.map(()=>(
-          results.map( items=><div key={items.person.id}>
+          results.map( items=><div>
             <h4>
-              {items.person.name}
+              {items.show.name}
             </h4>
+            <h5>status: <i>{items.show.status}</i></h5>
             </div> )
-        ))
+        )
     }
 
       return null;

@@ -47,10 +47,10 @@ const Home = () => {
         </h4>
         <h5>status: <i>{items.show.status}</i></h5>
         </div> ):results.map(()=>(
-          results.map( items=><div key={items.person.id}>
-            <h4>
-              {items.person.name}
-            </h4>
+          results.map( items=><div key={items.show.id}>
+            <h>
+              {items.show.name}
+            </h/>
             </div> )
         ))
     }
