@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, { useState, use } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
@@ -31,7 +31,6 @@ const Home = () => {
   const onRadioChange = ev => {
     setSearchOption(ev.target.value);
   };
-
 
   const renderResults = () => {
     if (results && results.length === 0) {

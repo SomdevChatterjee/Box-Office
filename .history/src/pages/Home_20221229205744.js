@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
@@ -32,7 +32,7 @@ const Home = () => {
     setSearchOption(ev.target.value);
   };
 
-
+  
   const renderResults = () => {
     if (results && results.length === 0) {
       return <div>No results</div>;
