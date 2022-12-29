@@ -1,3 +1,4 @@
+
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
@@ -43,8 +44,9 @@ const Home = () => {
       ) : (
         <ActorGrid data={results} />
       );
+      console.log(results);
     }
-    
+
     return null;
   };
 

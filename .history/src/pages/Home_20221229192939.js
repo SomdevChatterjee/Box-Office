@@ -1,9 +1,10 @@
+
 /* eslint-disable no-console */
 import React, { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { apiGet } from '../misc/config';
 import ShowGrid from '../components/show/ShowGrid';
-import ActorGrid from '../components/actor/ActorGrid';
+// import ActorGrid from '../components/actor/ActorGrid';
 
 const Home = () => {
   const [input, setInput] = useState('');
@@ -40,11 +41,9 @@ const Home = () => {
     if (results && results.length > 0) {
       return results[0].show ? (
         <ShowGrid data={results} />
-      ) : (
-        <ActorGrid data={results} />
-      );
+      ) : console.log(results);
     }
-    
+
     return null;
   };
 

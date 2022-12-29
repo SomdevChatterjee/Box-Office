@@ -43,8 +43,9 @@ const Home = () => {
       ) : (
         <ActorGrid data={results} />
       );
+      console.log(results);
     }
-    
+
     return null;
   };
 

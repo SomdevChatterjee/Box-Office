@@ -30,6 +30,7 @@ const Home = () => {
 
   const onRadioChange = ev => {
     setSearchOption(ev.target.value);
+    console.log(setSearchOption);
   };
 
   const renderResults = () => {
@@ -44,7 +45,7 @@ const Home = () => {
         <ActorGrid data={results} />
       );
     }
-    
+
     return null;
   };
 

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import React, { useState } from 'react';
 import MainPageLayout from '../components/MainPageLayout';
 import { apiGet } from '../misc/config';
@@ -44,7 +43,7 @@ const Home = () => {
         <ActorGrid data={results} />
       );
     }
-    
+
     return null;
   };
 
