@@ -28,8 +28,10 @@ const Show = () => {
   const { id }= useParams();
   console.log('params', id);
   
-  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState);
-
+  const [{show, isloading, error}, dispatch] = useReducer(reducer, initialState)
+  // const [show, setShow] = useState(null) 
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
 
  useEffect( ()=>{
@@ -55,7 +57,9 @@ const Show = () => {
       isMounted = false;
     })
   },[id] )
+  console.log(state)
   console.log('show', show)
+  console.log('isloading')
 
 
   if(isLoading){

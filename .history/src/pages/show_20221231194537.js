@@ -28,7 +28,7 @@ const Show = () => {
   const { id }= useParams();
   console.log('params', id);
   
-  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState);
+  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState)
 
 
 
@@ -54,8 +54,10 @@ const Show = () => {
     return(()=>{
       isMounted = false;
     })
+    console.log('show', show)
+    console.log('isloading', isLoading);
   },[id] )
-  console.log('show', show)
+
 
 
   if(isLoading){

@@ -7,7 +7,7 @@ import { apiGet } from '../misc/config';
 const reducer = (prevState, action) => {
   switch(action.type){
     case 'FETCH_SUCCESS':{
-      return { isloading: false, error:null, show: action.show}
+      return {...prevState, isloading: false, error:null, show: action.show}
     }
 
     case 'FETCH_FAILED':{
@@ -28,8 +28,10 @@ const Show = () => {
   const { id }= useParams();
   console.log('params', id);
   
-  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState);
-
+  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState)
+  // const [show, setShow] = useState(null) 
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
 
  useEffect( ()=>{
@@ -55,21 +57,22 @@ const Show = () => {
       isMounted = false;
     })
   },[id] )
-  console.log('show', show)
+  // console.log('show', show)
+  // console.log('isloading')
 
 
-  if(isLoading){
-    return<div><h1>data is being loaded</h1></div>
-  }
+  // if(isLoading){
+  //   return<div><h1>data is being loaded</h1></div>
+  // }
 
-  if(error){
-    return <div><h1>Error occured:{error}</h1></div>
-  }
-  return (
-    <div>
-      <h1>this is show page</h1>
-    </div>
-  )
+  // if(error){
+  //   return <div><h1>Error occured:{error}</h1></div>
+  // }
+  // return (
+  //   <div>
+  //     <h1>this is show page</h1>
+  //   </div>
+  // )
 }
 
 export default Show

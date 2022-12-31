@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React,{useEffect, useReducer} from 'react'
+import React,{useEffect, useState, useReducer} from 'react'
 import { useParams } from 'react-router-dom'
 import { apiGet } from '../misc/config';
 
@@ -7,15 +7,13 @@ import { apiGet } from '../misc/config';
 const reducer = (prevState, action) => {
   switch(action.type){
     case 'FETCH_SUCCESS':{
-      return { isloading: false, error:null, show: action.show}
+      return {...prevState, isloading: false, error:null show: action.show}
     }
-
     case 'FETCH_FAILED':{
-      return{...prevState, isloading:false, error:action.error };
+      return{...prevState, isloading:false, r}
     }
-
-    default:
-      return prevState
+    default:return prevState
+  }
   }
 }
 
@@ -28,8 +26,10 @@ const Show = () => {
   const { id }= useParams();
   console.log('params', id);
   
-  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState);
-
+  const [{show, isLoading, error}, dispatch] = useReducer(reducer, initialState)
+  // const [show, setShow] = useState(null) 
+  // const [isLoading, setIsLoading] = useState(true);
+  // const [error, setError] = useState(null);
 
 
  useEffect( ()=>{
@@ -55,7 +55,7 @@ const Show = () => {
       isMounted = false;
     })
   },[id] )
-  console.log('show', show)
+  console.log(show)
 
 
   if(isLoading){
