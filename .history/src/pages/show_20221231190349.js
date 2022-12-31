@@ -13,26 +13,17 @@ const Show = () => {
 
 
   useEffect( ()=>{
-    let isMounted = true;
-
     apiGet(`shows/${id}?embed[]=seasons&embed[]=cast`)
     .then(results =>{
-        
-          if(isMounted){
-            setShow(results);
-            setIsLoading(false);
-          }
-          
+        setTimeout(() => {
+          setShow(results);
+          setIsLoading(false);
+        }, 2000);
+
     }).catch((err=>{
-      if(isMounted){
       setError(err.message);
       setIsLoading(false);
-      }
     }))
-
-    return(()=>{
-      isMounted = false;
-    })
   },[id] )
   console.log(show)
 
@@ -42,7 +33,7 @@ const Show = () => {
   }
 
   if(error){
-    return <div><h1>Error occured:{error}</h1></div>
+    return <div>Error occured:{error}</div>
   }
   return (
     <div>

@@ -23,6 +23,8 @@ const Show = () => {
             setIsLoading(false);
           }
           
+        }, 2000);
+
     }).catch((err=>{
       if(isMounted){
       setError(err.message);
