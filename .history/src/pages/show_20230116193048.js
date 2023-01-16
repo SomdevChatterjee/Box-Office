@@ -65,34 +65,21 @@ const Show = () => {
   }
 
   return (
-    <div>
-      <ShowMainData
-        image={show.image}
-        name={show.name}
-        rating={show.rating}
-        summary={show.summary}
-        tags={show.genres}
-      />
-
+    
+      <ShowMainData/>
       <div>
         <h2>Details</h2>
-        <Details
-          status={show.status}
-          network={show.network}
-          premiered={show.premiered}
-        />
+        <Details/>
       </div>
-
-      <div>
-        <h2>Seasons</h2>
-        <Seasons seasons={show._embedded.seasons} />
-      </div>
-
-      <div>
-        <h2>Cast</h2>
-        <Cast cast={show._embedded.cast} />
-      </div>
+    <div>
+      <h2>Details</h2>
+          <Seasons/>
     </div>
+    <div>
+      <h2>Details</h2>
+      <Cast/>
+    </div>
+  </div>
   );
 };
 
