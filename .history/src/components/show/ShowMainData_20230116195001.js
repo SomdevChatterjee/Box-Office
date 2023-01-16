@@ -24,7 +24,7 @@ const ShowMainData = ({ name, rating, summary, tags, image }) => {
             {tags.map((tag, i) => (
               <span key={i}>{tag}</span>
             ))}
-          </TagList>
+          </tag>
         </div>
       </div>
     </MainDataWrapper>

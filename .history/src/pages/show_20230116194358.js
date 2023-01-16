@@ -82,17 +82,17 @@ const Show = () => {
           network={show.network}
           premiered={show.premiered}
         />
-      </InfoBlock>
+      </Info>
 
-      <InfoBlock>
+      <div>
         <h2>Seasons</h2>
         <Seasons seasons={show._embedded.seasons} />
-      </InfoBlock>
+      </div>
 
-      <InfoBlock>
+      <div>
         <h2>Cast</h2>
         <Cast cast={show._embedded.cast} />
-      </InfoBlock>
+      </div>
     </ShowPageWrapper>
   );
 };

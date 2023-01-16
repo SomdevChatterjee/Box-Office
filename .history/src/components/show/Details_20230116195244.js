@@ -10,7 +10,7 @@ const Details = ({ status, premiered, network }) => {
       <p>
         Premiered {premiered} {network ? `on ${network.name}` : null}
       </p>
-    </DetailsWrapper>
+    </deta>
   );
 };
 
