@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React, { useState, useEffect } from 'react'
 import MainPageLayout from '../components/MainPageLayout'
-import ShowGrid from '../components/show/ShowGrid'
 import { apiGet } from '../misc/config'
 import { useShow } from '../misc/custom-hooks'
 
@@ -16,9 +15,8 @@ const Starred = () => {
 
     if(starred && starred.length > 0){
       const promises = starred.map(showId => apiGet(`/shows/${showId}`))
-      Promise.all(promises)
-      .then(apiData =>apiData.map(show=>({ show })))
-      .then(results => {  
+      Promise.all(promises).then(results => {
+        
         setShows(results);
         setIsLoading(false);
       }).catch(err =>{
@@ -35,7 +33,7 @@ const Starred = () => {
           { isLoading && <div>Shows are still loading</div>}
           {error && <div>Error occured : {error}</div>}
           {!isLoading && !shows && <div>No shows were added</div>}
-          {!isLoading && shows && !error &&<ShowGrid data={shows}/>}
+          {!isLoading && shows && !error &&<>0<</>}
         </MainPageLayout>
     </div>
   )
