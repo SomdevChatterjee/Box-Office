@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Star } from '../styled';
 import { StyledShowCard } from './ShowaCardStyled';
 
-const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
+const ShowCard = ({ id, image, name, summary, onStarClick }) => {
   const summaryAsText = summary
     ? `${summary.split(' ').slice(0, 10).join(' ').replace(/<.+?>/g, "")}...`
     : 'No description';
@@ -20,7 +20,7 @@ const ShowCard = ({ id, image, name, summary, onStarClick, isStarred }) => {
 
       <div className='btns'>
         <Link to={`/show/${id}`}>Read more</Link>
-        <button type="button" onClick={onStarClick}> <Star active={isStarred}/> </button>
+        <button type="button" onClick={onStarClick}> <Star act/> </button>
       </div>
     </StyledShowCard>
   );
