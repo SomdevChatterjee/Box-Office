@@ -15,24 +15,8 @@ const theme = {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-
-      <Route exact path="/starred">
-        <Starred />
-      </Route>
-
-      <Route exact path="/show/:id">
-        <Show />
-      </Route>
-
-      <Route>
-        <div>Not found</div>
-      </Route>
-    </Switch>
+    <ThemeProvider>
+      
     </ThemeProvider>
     
   );

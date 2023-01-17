@@ -1,6 +1,5 @@
-/* eslint-disable no-console */
 import React from 'react'
-import { useLocation } from 'react-router';
+import { Link } from 'react-router-dom'
 import { LinkStyled, NavList } from './Navs.styled';
 
 const LINKS = [
@@ -13,14 +12,13 @@ const LINKS = [
 ];
 
 const Navs = () => {
-    const {pathname} = useLocation();
     return (
         <div>
             <NavList>
                 {
                     LINKS.map(({to, text}) => (
                         <li key={to}>
-                                <LinkStyled to={to} className={to === pathname} >{text}</LinkStyled>
+                                <LinkStyled to={item.to}>{item.text}</LinkS>
                         </li>
                     ))
                 }

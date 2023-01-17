@@ -15,7 +15,7 @@ const theme = {
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={}>
       <Switch>
       <Route exact path="/">
         <Home />

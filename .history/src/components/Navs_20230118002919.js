@@ -13,14 +13,14 @@ const LINKS = [
 ];
 
 const Navs = () => {
-    const {pathname} = useLocation();
+    const {} = useLocation();
     return (
         <div>
             <NavList>
                 {
                     LINKS.map(({to, text}) => (
                         <li key={to}>
-                                <LinkStyled to={to} className={to === pathname} >{text}</LinkStyled>
+                                <LinkStyled to={to} className={to === location.pathname} >{text}</LinkStyled>
                         </li>
                     ))
                 }
