@@ -1,5 +1,4 @@
 import { useReducer, useEffect, useState } from 'react';
-import { apiGet } from './config';
 
 function showReducer(prevState, action){
     switch(action.type){
@@ -65,7 +64,7 @@ const reducer = (prevState, action) => {
   
 
 export function useShows(showId){
-    const [state, dispatch] = useReducer(
+    const [{ show, isLoading, error }, dispatch] = useReducer(
         reducer,
         {
             show: null,
@@ -74,25 +73,7 @@ export function useShows(showId){
           }
       );
     
-      useEffect(() => {
-        let isMounted = true;
+     
     
-        apiGet(`/shows/${showId}?embed[]=seasons&embed[]=cast`)
-          .then(results => {
-            if (isMounted) {
-              dispatch({ type: 'FETCH_SUCCESS', show: results });
-            }
-          })
-          .catch(err => {
-            if (isMounted) {
-              dispatch({ type: 'FETCH_FAILED', error: err.message });
-            }
-          });
     
-        return () => {
-          isMounted = false;
-        };
-      }, [showId]);
-    
-    return state;
 }

@@ -94,5 +94,5 @@ export function useShows(showId){
         };
       }, [showId]);
     
-    return state;
+    
 }

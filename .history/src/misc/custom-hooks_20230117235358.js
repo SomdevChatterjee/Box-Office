@@ -65,7 +65,7 @@ const reducer = (prevState, action) => {
   
 
 export function useShows(showId){
-    const [state, dispatch] = useReducer(
+    const [{ show, isLoading, error }, dispatch] = useReducer(
         reducer,
         {
             show: null,
@@ -92,7 +92,7 @@ export function useShows(showId){
         return () => {
           isMounted = false;
         };
-      }, [showId]);
+      }, [showid]);
     
-    return state;
+    
 }

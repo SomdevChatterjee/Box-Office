@@ -7,7 +7,7 @@ import ActorGrid from '../components/actor/ActorGrid';
 import { useLastQuery } from '../misc/custom-hooks';
 
 const Home = () => {
-  const [input, setInput] = useLastQuery();
+  const [input, setInput] = useLastQuery('');
   const [results, setResults] = useState(null);
   const [searchOption, setSearchOption] = useState('shows');
 

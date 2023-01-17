@@ -1,5 +1,4 @@
 import { useReducer, useEffect, useState } from 'react';
-import { apiGet } from './config';
 
 function showReducer(prevState, action){
     switch(action.type){
@@ -47,37 +46,23 @@ export function useLastQuery(key = 'lastQuery'){
     return [input, setPersistedInput];
 }
 
-const reducer = (prevState, action) => {
-    switch (action.type) {
-      case 'FETCH_SUCCESS': {
-        return { isLoading: false, error: null, show: action.show };
-      }
-  
-      case 'FETCH_FAILED': {
-        return { ...prevState, isLoading: false, error: action.error };
-      }
-  
-      default:
-        return prevState;
-    }
-  };
-  
-  
+
 
 export function useShows(showId){
-    const [state, dispatch] = useReducer(
+    const initialState = {
+        show: null,
+        isLoading: true,
+        error: null,
+      };
+    const [{ show, isLoading, error }, dispatch] = useReducer(
         reducer,
-        {
-            show: null,
-            isLoading: true,
-            error: null,
-          }
+        initialState
       );
     
       useEffect(() => {
         let isMounted = true;
     
-        apiGet(`/shows/${showId}?embed[]=seasons&embed[]=cast`)
+        apiGet(`/shows/${id}?embed[]=seasons&embed[]=cast`)
           .then(results => {
             if (isMounted) {
               dispatch({ type: 'FETCH_SUCCESS', show: results });
@@ -92,7 +77,7 @@ export function useShows(showId){
         return () => {
           isMounted = false;
         };
-      }, [showId]);
+      }, [id]);
     
-    return state;
+    
 }
