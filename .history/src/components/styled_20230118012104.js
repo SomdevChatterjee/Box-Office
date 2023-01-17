@@ -1,8 +1,7 @@
 /* eslint-disable no-console */
-import FadeIn from "react-fade-in/lib/FadeIn";
 import styled from "styled-components";
 
-export const FlexGrid = styled(FadeIn)`
+export const FlexGrid = styled()`
     display:flex;
     justify-content:center;
     flex-wrap: wrap;
